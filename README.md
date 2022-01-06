@@ -4,7 +4,9 @@ A package showing the power of ctypes in combination with modern fortran languag
 Requirements:
 
 python version >= 3.8
+
 numpy version >= 1.19.5
+
 ctypes version >= 1.1.0
 
 Installation instructions:
