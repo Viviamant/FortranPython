@@ -11,7 +11,7 @@ ctypes version >= 1.1.0
 
 INSTALLATION INSTRUCTION:
 
-make sure that the executables for gfortran and python3 are in agreement with your specific installation
+make sure that the executables for gfortran and python3 written inside the makefile are in agreement with your specific installation
 
 $ sudo ./makefile.sh
  
