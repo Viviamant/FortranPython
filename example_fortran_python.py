@@ -41,6 +41,12 @@ A = [
 myFortranLibrary.GetDeterminant(A)
 print()
 
+print("Test on Callback of a python function inside Fortran")
+def getFunction(inputReal):
+     x = inputReal
+     return x*np.cos(10.*x**2)/(x**2 + 1.)
+myFortranLibrary.Integrate(getFunction, .0, np.pi, 1000)
+
 print("Test on Fast Fourier Transform of complex array")
 N = 1024 
 T = 1. / 720.
@@ -48,11 +54,5 @@ x = np.linspace(.0, N*T, N)
 f1 = 50.*2.*np.pi
 f2 = 80.*2.*np.pi
 signal = np.sin(f1*x) + .5*np.sin(f2*x) + 0j*x
-myFortranLibrary.FastFourierTransform(x, signal)
+myFortranLibrary.FastFourierTransform(x, signal, plotting=True)
 print()
-
-print("Test on Callback of a python function inside Fortran")
-def getFunction(inputReal):
-     x = inputReal
-     return x*np.cos(10.*x**2)/(x**2 + 1.)
-myFortranLibrary.Integrate(getFunction, .0, np.pi, 1000)
